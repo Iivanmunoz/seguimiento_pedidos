@@ -185,7 +185,7 @@ app.post('/auth/cliente', (req, res) => {
             });
         }
         
-        console.log("Datos de clientes cargados:", clientesData.length, "registros");
+        // console.log("Datos de clientes cargados:", clientesData.length, "registros");
         
         // Buscar usuario en los datos de la hoja 2
         const user = clientesData.find(cliente => 
@@ -220,7 +220,7 @@ app.post('/auth/cliente', (req, res) => {
         }
         
         // Si llegamos aquí, el usuario está autenticado correctamente
-        console.log("Autenticación exitosa para:", sanitizedUsername);
+        // console.log("Autenticación exitosa para:", sanitizedUsername);
         
         // Obtener datos del pedido desde la hoja 1
         const sheet1Name = workbook.SheetNames[0];
@@ -258,7 +258,7 @@ app.post('/auth/cliente', (req, res) => {
         // Tomamos el primer pedido del cliente (o podemos guardar todos)
         const pedidoCliente = Array.isArray(pedidosCliente) ? pedidosCliente : [pedidosCliente];
         
-        console.log('estos son los pedidos', pedidoCliente);
+        // console.log('estos son los pedidos', pedidoCliente);
         return res.json({
             success: true,
             message: `Autenticación exitosa (${pedidosCliente.length} pedidos encontrados)`,

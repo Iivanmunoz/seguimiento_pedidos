@@ -272,7 +272,7 @@ function updateProgressForOrder(orderElement, order, index) {
         const progressBar = orderElement.querySelector(`.status-progres[data-index="${index}"]`);
         if (progressBar) {
             progressBar.style.width = `${(statusNumber * 25)}%`;
-            console.log(`Barra de progreso actualizada para el pedido ${index + 1}: ${statusNumber * 25}%`);
+            // console.log(`Barra de progreso actualizada para el pedido ${index + 1}: ${statusNumber * 25}%`);
         } else {
             console.error(`No se encontró el elemento '.status-progress' para el pedido ${index + 1}`);
         }
@@ -286,8 +286,8 @@ function updateProgressForOrder(orderElement, order, index) {
                 // Usar el índice como número de paso si no hay atributo data-step
                 const stepNumber = parseInt(step.getAttribute('data-step') || (i + 1).toString());
                 const dot = step.querySelector('.step-dot');
-                console.log(stepNumber,"AQUI ESTA EL STEPNUMBER");
-                console.log(statusNumber,"AQUI ESTA EL STATUSNUMBER");
+                // console.log(stepNumber,"AQUI ESTA EL STEPNUMBER");
+                // console.log(statusNumber,"AQUI ESTA EL STATUSNUMBER");
                 if (dot) {
                     console.log(step,"DENTRO DEL IF Y ESTO STEP")
                     if (stepNumber < statusNumber) {
