@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Seguimiento de Pedidos en Alessia</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <!-- <div class="header-logo">
+                <img src="../public/css/img/icono_factura.png" alt="Logo">
+            </div> -->
+            <h1>Mis pedidos</h1>
+            <div class="user-info">
+                <span id="username"></span>
+                <form id="logout-form" action="/logout" method="post">
+                    <button type="submit" class="btn btn-logout">Cerrar sesión</button>
+                </form>
+            </div>
+        </header>
+
+          <!-- ALERTA PARA QUE SE REPITA -->
+          <div id="customAlert" class="custom-alert">
+            <span class="close-btn" onclick="closeAlert()">&times;</span>
+            <div class="alert-header">¡Ofertas de envío!</div>
+            <div class="alert-content">
+                FLETE GRATIS FORANEO $25,000.00 PESOS<br><br>
+                FLETE GRATIS LOCAL $20,000.00 PESOS<br><br>
+                SEGUNDO ENVIO FLETE GRATIS $12,000.00 PESOS<br><br>
+                COBRO DE ENVIO $1000.00 PESOS<br><br>
+                COBRO POR 2do. INTENTO DE ENTREGA (LOCAL Y FORANEO) $1000.00 PESOS
+            </div>
+        </div> 
+
+
+
+        <main class="dashboard-content" id="order-card">
+            <div class="order-details">
+                <div class="detail-item">
+                    <span class="detail-label">Cliente:</span>
+                    <span class="detail-value" id="cliente"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Fecha:</span>
+                    <span class="detail-value" id="fecha"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Ubicacion de pedido:</span>
+                    <span class="detail-value" id="ubicacion"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Transporte:</span>
+                    <span class="detail-value" id="cantidad"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Status pedido:</span>
+                    <span class="detail-value" id="status"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Factura:</span>
+                    <span class="detail-value" id="factura"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Guia de Pedido:</span>
+                    <span class="detail-value" id="guia_pedido"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Monto Total</span>
+                    <span class="detail-value" id="monto"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Fecha de ingreso</span>
+                    <span class="detail-value" id="fecha_ingreso"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Numero de pedido</span>
+                    <span class="detail-value" id="pedido"></span>
+                </div>
+            </div>
+
+            <div class="order-actions" id="order-actions">
+                <!-- Botones condicionales (factura/guía) se agregarán aquí con JavaScript -->
+            </div>
+        </main>
+        <footer class="dashboard-footer">
+            <div class="footer-container">
+                <!-- Columna Logo -->
+                <div class="footer-column">
+                    <h2 class="footer-logo">Alessia MotoPartes</h2>
+                    <p class="footer-slogan">
+                        Sistema de seguimiento de Pedidos<br>
+                        Somos Parte de tu Moto
+                    </p>
+                </div>
+    
+                <!-- Columna Redes Sociales -->
+                <div class="footer-column footer-social">
+                    <h3 class="social-title">Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/OficialAlessia" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@alessia.ebikes.mx" target="_blank" rel="noopener">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alessiamotopartes_oficial/?hl=es-la" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Alessiamotopartesoficial" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Columna Legal -->
+                <div class="footer-column legal-info">
+                    <div class="legal-links">
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Política de Privacidad</a>
+                    </div>
+                    <p class="copyright">
+                        © 2024 Awards. Todos los derechos reservados.<br>
+                        Acuerdo 31/05/2020
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Efecto decorativo -->
+            <div class="decorative-effect"></div>
+        </footer>
+        
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

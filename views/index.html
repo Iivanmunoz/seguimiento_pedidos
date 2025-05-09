@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Seguimiento</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>Sistema de Seguimiento</h1>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="cliente">Cliente</button>
+                <button class="tab-btn" data-tab="admin">Administrador</button>
+            </div>
+            
+            <div class="tab-content" id="cliente-tab">
+                <form id="cliente-login" action="/auth/cliente" method="post">
+                    <div class="form-group">
+                        <label for="cliente-username">Usuario:</label>
+                        <input type="text" id="cliente-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cliente-password">Contraseña:</label>
+                        <input type="password" id="cliente-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </form>
+            </div>
+            
+            <div class="tab-content hidden" id="admin-tab">
+                <div id="step-1">
+                    <form id="excel-upload" action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="excel-file">Subir archivo Excel:</label>
+                            <div class="file-input-container">
+                                <input type="file" id="excel-file" name="excel" accept=".xlsx" required>
+                                <div class="file-input-label">Seleccionar archivo</div>
+                            </div>
+                            <div id="file-name" class="file-name"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subir archivo</button>
+                    </form>
+                </div>
+                
+                <div id="step-2" class="hidden">
+                    <form id="admin-login" action="/auth/admin" method="post">
+                        <div class="form-group">
+                            <label for="admin-username">Usuario:</label>
+                            <input type="text" id="admin-username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="admin-password">Contraseña:</label>
+                            <input type="password" id="admin-password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="notification" id="notification"></div>
+        </div>
+    </div>
+    
+    <script src="/js/login.js"></script>
+</body>
+</html>
